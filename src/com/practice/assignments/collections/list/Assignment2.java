@@ -13,20 +13,19 @@ public class Assignment2 {
     public static void main(String[] args) {
 
         //Declaring List ref with Linked List Constructor
-        List<String> strList = new LinkedList<>();
-        strList.add("tree");//Adding elements to list
-        strList.add("branch");
-        strList.add("node");
-        strList.add("leaf");
-        strList.add("root");
+        List<String> studentName = new LinkedList<>();
+        studentName.add("Arpan");//Adding elements to list
+        studentName.add("Vikas");
+        studentName.add("Krushit");
+        studentName.add("Vinay");
 
         /*
         Sorting Linked List using Collections.sort
          */
         System.out.println("Performing sorting operation on Linked List: ");
-        System.out.println("Before sorting: "+strList);
-        Collections.sort(strList);
-        System.out.println("\nAfter sorting: "+strList);
+        System.out.println("Before sorting: "+studentName);
+        Collections.sort(studentName);
+        System.out.println("\nAfter sorting: "+studentName);
         System.out.println();
 
         /*
@@ -37,15 +36,15 @@ public class Assignment2 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Type the string to search: ");
-        String temp = sc.nextLine().toLowerCase();
+        String temp = sc.nextLine();
 
         System.out.println("Searching for " + temp + " in list.");
 
-        if(Collections.binarySearch(strList, temp) < 0){
-            System.out.println("Element not found in the list.");
+        if(Collections.binarySearch(studentName, temp) < 0){
+            System.out.println("Name not found in the list.");
         }
         else {
-            System.out.println("Found at: " +  + Collections.binarySearch(strList, temp));
+            System.out.println("Found at: " +  + Collections.binarySearch(studentName, temp));
         }
     }
 }
