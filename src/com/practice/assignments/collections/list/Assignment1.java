@@ -72,6 +72,10 @@ public class Assignment1 {
         while (numIterator.hasNext()) {
             System.out.print(numIterator.next() + " ");
         }
+        System.out.println();
+
+        System.out.print("Traversing ArrayList using Stream: ");
+        numList.stream().forEach(num -> System.out.println(num + " "));
         System.out.println("\n");
 
         /*
@@ -125,6 +129,10 @@ public class Assignment1 {
         while (strIterator.hasNext()) {
             System.out.print(strIterator.next() + " ");
         }
+        System.out.println();
+
+        System.out.print("Traversing LinkedList using Stream: ");
+        strList.stream().forEach(str -> System.out.println(str + " "));
         System.out.println("\n");
 
         /*
