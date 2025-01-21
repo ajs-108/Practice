@@ -25,16 +25,18 @@ public class Assignment4 {
 
         //Converting list back to array
         //Declare array with size of list
-        Integer[] anotherNumList = new Integer[arrList.size()];
+        //Object[] anotherNumList = arrList.toArray();
 
-        //Conversion using for loop
-        for (int i = 0; i < arrList.size(); i++) {
-            anotherNumList[i] = arrList.get(i);
-        }
+        Integer[] numArr = new Integer[arrList.size()];
+        arrList.toArray(numArr);
+//        //Conversion using for loop
+//        for (int i = 0; i < arrList.size(); i++) {
+//            numArr[i] = arrList.get(i);
+//        }
 
         System.out.println("List Converted to 'Array': ");
 
-        for (Integer num : anotherNumList) {
+        for (Integer num :numArr) {
             System.out.print(num + " ");
         }
     }

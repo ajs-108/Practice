@@ -27,7 +27,7 @@ public class Assignment1 {
         /*
           Declaring a List ref and instantiating it with ArrayList
          */
-        List<Integer> numList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>(10);
         numList.add(2);//Adding elements to list
         numList.add(5);
         numList.add(8);
@@ -71,6 +71,7 @@ public class Assignment1 {
         Iterator<Integer> numIterator = numList.iterator();
         while (numIterator.hasNext()) {
             System.out.print(numIterator.next() + " ");
+
         }
         System.out.println();
 
