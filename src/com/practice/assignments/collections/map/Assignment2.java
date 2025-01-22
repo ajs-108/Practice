@@ -20,24 +20,21 @@ public class Assignment2 {
                 rehashed ( that is, internal data structures are rebuilt ) so that the hash table has approximately 
                 twice the number of buckets.""";
 
-        LinkedList<String> allWords = new LinkedList<>(Arrays.asList(para.toLowerCase().split("[ ,.():\\n]")));
-
-        //Storing words of paragraph in set to make it unique
-        LinkedHashSet<String> words = new LinkedHashSet<>(Arrays.asList(para.toLowerCase().split("[ ,.():\\n]")));
+        String[] words = para.toLowerCase().split("[ ,.():\\n]");
 
         HashMap<String, Integer> wordFrequencyMap = new HashMap<>();
 
         for (String word : words) {
-            if(word.equals("")){
-                continue;
+            //if word is already present in map increase the frequency by one
+            if (wordFrequencyMap.containsKey(word)) {
+                wordFrequencyMap.put(word, wordFrequencyMap.get(word) + 1);
             }
-            wordFrequencyMap.put(word, Collections.frequency(allWords,word));
+            //else put new word to map with frequency of one
+            else {
+                wordFrequencyMap.put(word, 1);
+            }
         }
 
-        System.out.println("Words: "+"Frequency");
-        for (Map.Entry<String, Integer> entry : wordFrequencyMap.entrySet()) {
 
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
     }
 }
