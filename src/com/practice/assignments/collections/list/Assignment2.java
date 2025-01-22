@@ -31,7 +31,7 @@ public class Assignment2 {
         /*
         Performing searching operation on Linked List using Collections.binarySearch
          */
-        System.out.println("Performing sorting operation on Linked List: ");
+        System.out.println("Performing searching operation on Linked List: ");
 
         Scanner sc = new Scanner(System.in);
 
