@@ -1,21 +1,31 @@
 package com.practice.collection;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        List<Student> s= new ArrayList<Student>();
-        s.add(new Student(1,"Arpan","BE",4));
-        s.add(new Student(2,"Ritvik","BCE",3));
+        ArrayList<Student> students = new ArrayList<>();
+        students.add(new Student(3, "Arpan", "BE", 4));
+        students.add(new Student(7, "Rishi", "ME", 1));
+        students.add(new Student(5, "Himanshu", "MCA", 2));
+        students.add(new Student(2, "Aditya", "BE", 4));
+        students.add(new Student(4, "Tejas", "BCom", 3));
 
-        Arrays arr = new Arrays(new Student(3,"Soham","MCA",2),new Student(4,"Tejas","MCA",1));
-        for (Student student : s) {
-            System.out.println(student.getName());
-        }
-        arr.getStudent();
+        Collections.sort(students);
+        System.out.println("Student List sorted by Id using Comparable: ");
+        System.out.println(students);
 
+        Collections.sort(students, new SortByStudentName());
+        System.out.println("\nStudent List sorted by name using Comparator: ");
+        System.out.println(students);
+
+        Comparator<Student> compareBYCourse = (s1, s2) -> s1.getCourse().compareTo(s2.getCourse());
+        Collections.sort(students, compareBYCourse);
+        System.out.println("\nStudent List sorted by Course using Comparator: ");
+        System.out.println(students);
     }
 }

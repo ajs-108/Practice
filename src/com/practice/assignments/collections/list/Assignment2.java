@@ -25,6 +25,7 @@ public class Assignment2 {
         System.out.println("Performing sorting operation on Linked List: ");
         System.out.println("Before sorting: "+studentName);
         Collections.sort(studentName);
+        studentName.stream().sorted();
         System.out.println("\nAfter sorting: "+studentName);
         System.out.println();
 

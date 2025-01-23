@@ -1,9 +1,7 @@
 package com.practice.collection;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 public class ListExample {
 
@@ -44,19 +42,18 @@ public class ListExample {
         numList.add(3);
         numList.add(1);
         numList.add(4);
-        numList.addAll(3,Arrays.asList(9,6,8));
-        System.out.println("LinkedList: "+ numList);
+        numList.addAll(3, Arrays.asList(9, 6, 8));
+        System.out.println("LinkedList: " + numList);
         numList.addFirst(20);
         numList.addLast(16);
-        System.out.println("LinkedList: "+ numList);
+        System.out.println("LinkedList: " + numList);
         numList.offer(18);
-        System.out.println("Add using offerFirst: "+numList.offerFirst(10));
+        System.out.println("Add using offerFirst: " + numList.offerFirst(10));
         numList.offerLast(19);
-        System.out.println("LinkedList: "+ numList);
-        System.out.println("Peek method: "+ numList.peek());
+        System.out.println("LinkedList: " + numList);
+        System.out.println("Peek method: " + numList.peek());
         System.out.println(numList.removeFirst());
         System.out.println(numList.removeLast());
-        System.out.println("LinkedList: "+ numList);
+        System.out.println("LinkedList: " + numList);
     }
-
 }
