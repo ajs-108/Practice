@@ -11,5 +11,10 @@ public class MathExample {
         System.out.println("Square root of 64: " + Math.sqrt(64));
 
         System.out.println("Scale up of Math(returns d * 2^scaleFactor): " + Math.scalb(2,2));
+
+        System.out.println(Math.round(1.4));
+        System.out.println(Math.round(6.5));
+        System.out.println(Math.round(4.2));
+
     }
 }

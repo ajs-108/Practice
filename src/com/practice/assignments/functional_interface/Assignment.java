@@ -27,7 +27,7 @@ public class Assignment {
         //Now using Lambda Expression it can be written as
         Function<String, Integer> len1 = str -> str.length();
 
-        //And it can be again be simplified using Method reference
+        //And it can be again simplified using Method reference
         // if the input and return type of method referenced matches that of Functional interface
         Function<String, Integer> len2 = String::length;
 
