@@ -1,10 +1,13 @@
 package com.practice.assignments.java8.stream;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
+import java.util.function.Supplier;
 import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 /**
  * Custom Collector for Aggregation
@@ -26,13 +29,13 @@ public class Assignment8 {
         employees.add(new Employee("An02", 400000.0, "Android"));
 
         //custom collector to aggregate employee salaries into a department-wise total.
-        Collector<Employee, ?, Map<String, Double>> groupDepartments = Collectors.groupingBy(Employee::getDepartment, Collectors.summingDouble(Employee::getSalary));
+        Collector<Employee, ?, Map<String, Double>> groupDept = new DeptCollector();
 
         //Mapping the departments to total of department-wise salaries using custom collector groupDepartments
-        Map<String, Double> deptToSalary = employees.stream().collect(groupDepartments);
+        Map<String, Double> departmentWiseSalary = employees.stream().collect(groupDept);
 
         //Displaying Department and corresponding total of salaries
-        for (Map.Entry<String, Double> map : deptToSalary.entrySet()) {
+        for (Map.Entry<String, Double> map : departmentWiseSalary.entrySet()) {
             System.out.println("Department: " + map.getKey() + "; Total_Salary: " + map.getValue());
         }
     }
