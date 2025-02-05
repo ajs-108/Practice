@@ -1,10 +1,10 @@
 package com.practice.thread;
 
-public class SynchronousExample {
+public class MainJoinExample {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Thread1 t1 = new Thread1();
+        Task1 t1 = new Task1();
         Thread thread = new Thread(t1);
         thread.join();
         thread.start();
@@ -14,7 +14,7 @@ public class SynchronousExample {
         synchronized (t1) {
             t1.notify();
         }
-
-        System.out.println(Thread.currentThread().getName() + " in the main method.");
+        Thread.sleep(3000);
+        System.out.println(Thread.currentThread().getName() + " is executing.");
     }
 }

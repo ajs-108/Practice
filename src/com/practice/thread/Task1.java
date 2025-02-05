@@ -1,6 +1,6 @@
 package com.practice.thread;
 
-public class Thread1 implements Runnable {
+public class Task1 implements Runnable {
 
 
     @Override
@@ -8,7 +8,6 @@ public class Thread1 implements Runnable {
 
         try {
             System.out.println(Thread.currentThread().getName() + " goes into runnable state.");
-
 
             synchronized (this) {
                 Thread.sleep(2000);
